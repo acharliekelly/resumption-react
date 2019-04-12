@@ -1,0 +1,48 @@
+/* Layout */
+
+
+
+
+
+#displayPanel {
+  min-height: 400px;
+}
+
+.resume-message {
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.resume-list section.resume {
+  margin: 3px auto;
+}
+
+.resume-view .resume-content {
+  background-color: #eee;
+  border: thin solid #666;
+  border-radius: 3px;
+  padding: 2px;
+  max-width: 600px;
+  min-height: 400px;
+  overflow: auto;
+}
+
+nav {
+  background-color: #dedede;
+  border: thin solid #cdcdcd;
+  border-radius: 3px;
+  padding: 2%;
+  text-align: center;
+
+  button {
+    margin: 5px 0;
+    width: 80%;
+  }
+}
+
+button.form-control {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}

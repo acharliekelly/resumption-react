@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+$success: #c7f282;
+$warning: #f1e681;
+$error: #f08181;
+$charcoal: #ccc;
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15% auto 0;
+  max-width: 600px;
+
+  h3,
+  input {
+    margin-bottom: 5%;
+  }
+
+  button {
+    align-self: flex-end;
+    max-width: 200px;
+  }
+}
+
+body {
+  background-color: #f90;
+}
+
+.container {
+  // display: flex;
+  // flex-direction: row;
+}
+
+.grid {
+  margin: 5px auto;
+  background: none;
+}
+
+.panel-wrapper {
+  padding: 0 2px;
+  min-height: 160px;
+}
+
+.panel {
+  background-color: #e5e5e5;
+  margin: 10px auto;
+  border: inset thin #999;
+  border-radius: 5px;
+  padding: 5px;
+  height: 100%;
+  width: 98%;
+}

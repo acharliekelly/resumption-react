@@ -1,0 +1,109 @@
+$charcoal: #bbb;
+
+
+.panel {
+  background-color: #dedede;
+  border: thin solid #cdcdcd;
+  border-radius: 3px;
+  padding: 2%;
+  text-align: center;
+
+  a.btn {
+    margin: 5px 0;
+    width: 80%;
+  }
+}
+
+.titlePanel .logo {
+  width: 70px;
+  margin-right: 5px;
+  border: thin gray inset;
+  border-radius: 2px;
+}
+.titlePanel h1 {
+  font-size: 60px;
+  font-family: Lobster, cursive;
+  font-weight: bold;
+}
+
+.titlePanel .titleLink, .titlePanel .titleLink:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.userMessage {
+  font-family: Poppins, sans-serif;
+  margin-bottom: 1px;
+}
+.userMessage .alert {
+  margin-bottom: 0;
+  padding: 0.25rem 0.5rem;
+}
+
+.authenticationPanel div {
+  margin-top: 5%;
+}
+
+main {
+  margin: 0 10%;
+}
+
+header {
+  text-align: center;
+  margin: 20px auto;
+
+  .title-image {
+    height: 15vh;
+  }
+}
+
+/*
+.main-header {
+  align-items: center;
+  border-bottom: 1px solid $charcoal;
+  display: flex;
+  height: 100px;
+  padding: 0 20px;
+
+  a,
+  span {
+    font-size: 1.2em;
+    margin: 0 15px;
+  }
+}
+
+.main-header > nav {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+  .main-header {
+    flex-direction: column;
+    font-size: 0.7em;
+    height: auto;
+    padding: 10px;
+
+    h1 {
+      font-size: 2.5em;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .main-header > nav {
+    flex-direction: column;
+    width: 100%;
+
+    a,
+    span {
+      border: 1px solid $charcoal;
+      margin-bottom: 5px;
+      text-align: center;
+      width: 80%;
+    }
+  }
+}
+*/

@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
+import InputGroup from 'react-bootstrap/InputGroup'
 
 import { signIn } from '../api'
 import messages from '../messages'
@@ -35,31 +41,43 @@ class SignIn extends Component {
   }
 
   render () {
-    const { email, password } = this.state
-
     return (
-      <form className='auth-form' onSubmit={this.onSignIn}>
-        <h3>Sign In</h3>
-        <label htmlFor="email">Email</label>
-        <input
-          required
-          type="email"
-          name="email"
-          value={email}
-          placeholder="Email"
-          onChange={this.handleChange}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          required
-          name="password"
-          value={password}
-          type="password"
-          placeholder="Password"
-          onChange={this.handleChange}
-        />
-        <button type="submit">Sign In</button>
-      </form>
+      <Modal.Dialog>
+        <Modal.Header closeButton>
+          <Modal.Title>Sign Up</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form id="signInForm" className="modal-form" onSubmit={this.onSignIn}>
+            <InputGroup className="mb-3">
+              <InputGroup.Prepend>
+                <InputGroup.Text>@</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                name="email"
+                type="email"
+                placeholder="Email"
+                onChange={this.handleChange}
+              />
+            </InputGroup>
+            <InputGroup className="mb-3">
+              <InputGroup.Prepend>
+                <InputGroup.Text>*</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                name="password"
+                type="password"
+                placeholder="Password"
+                onChange={this.handleChange}
+              />
+            </InputGroup>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Link className="btn btn-secondary" to="/">Close</Link>
+          { /* <Button variant="secondary" onClick={this.handleClose}>Close</Button> */ }
+          <Button variant="primary" onClick={this.onSignIn}>Submit</Button>
+        </Modal.Footer>
+      </Modal.Dialog>
     )
   }
 }

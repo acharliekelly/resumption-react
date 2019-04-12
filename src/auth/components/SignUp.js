@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
@@ -15,19 +15,10 @@ class SignUp extends Component {
     super()
 
     this.state = {
-      show: false,
       email: '',
       password: '',
       passwordConfirmation: ''
     }
-  }
-
-  handleShow = () => {
-    this.setState({ show: true })
-  }
-
-  handleClose = () => {
-    this.setState({ show: false })
   }
 
   handleChange = event => this.setState({
@@ -49,15 +40,11 @@ class SignUp extends Component {
         this.setState({ email: '', password: '', passwordConfirmation: '' })
         alert(messages.signUpFailure, 'danger')
       })
-
-    this.setState({ show: false })
   }
 
   render () {
-    const { email, password, passwordConfirmation } = this.state
-
     return (
-      <Modal.Dialog show={this.state.show} onHide={this.handleClose}>
+      <Modal.Dialog>
         <Modal.Header closeButton>
           <Modal.Title>Sign Up</Modal.Title>
         </Modal.Header>
@@ -65,7 +52,7 @@ class SignUp extends Component {
           <Form className="modal-form" onSubmit={this.onSignUp}>
             <InputGroup className="mb-3">
               <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+                <InputGroup.Text>@</InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
                 name="email"
@@ -74,41 +61,33 @@ class SignUp extends Component {
                 onChange={this.handleChange}
               />
             </InputGroup>
-            <InputGroup 
-
-            <div className="input-group-prepend">
-              <span className="input-group-text">@</span>
-            </div>
-            <input
-              required
-              name="email"
-              value={email}
-              type="email"
-              placeholder="Email"
-              onChange={this.handleChange}
-            />
-            <label htmlFor="password">Password</label>
-            <input
-              required
-              name="password"
-              value={password}
-              type="password"
-              placeholder="Password"
-              onChange={this.handleChange}
-            />
-            <label htmlFor="passwordConfirmation">Confirm Password</label>
-            <input
-              required
-              name="passwordConfirmation"
-              value={passwordConfirmation}
-              type="password"
-              placeholder="Confirm Password"
-              onChange={this.handleChange}
-            />
+            <InputGroup className="mb-3">
+              <InputGroup.Prepend>
+                <InputGroup.Text>*</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                name="password"
+                type="password"
+                placeholder="Password"
+                onChange={this.handleChange}
+              />
+            </InputGroup>
+            <InputGroup className="mb-3">
+              <InputGroup.Prepend>
+                <InputGroup.Text>Confirm</InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl
+                name="passwordConfirmation"
+                type="password"
+                placeholder="Confirm Password"
+                onChange={this.handleChange}
+              />
+            </InputGroup>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={this.handleClose}>Close</Button>
+          <Link className="btn btn-secondary" to="/">Close</Link>
+          { /* <Button variant="secondary" onClick={this.handleClose}>Close</Button> */ }
           <Button variant="primary" onClick={this.onSignUp}>Submit</Button>
         </Modal.Footer>
       </Modal.Dialog>
